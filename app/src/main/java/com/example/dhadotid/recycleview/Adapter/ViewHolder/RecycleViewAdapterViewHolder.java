@@ -4,7 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.dhadotid.recycleview.Model.DataModel;
+import com.example.dhadotid.recycleview.Model.EvaluasiModel;
 import com.example.dhadotid.recycleview.R;
 
 import java.text.SimpleDateFormat;
@@ -37,9 +37,7 @@ public class RecycleViewAdapterViewHolder extends RecyclerView.ViewHolder {
         return simpleDateFormat.format(new Date(tanggal));
     }
 
-    public void setUI(DataModel data){
-        task.setText("" + data.getTask());
-        createdat.setText("" + getTanggal(data.getCreatedTime()));
-        deadline.setText("" + getTanggal(data.getDeadline()));
+    public void setUI(EvaluasiModel data){
+
     }
 }

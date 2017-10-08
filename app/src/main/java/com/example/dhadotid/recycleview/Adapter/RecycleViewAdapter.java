@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.dhadotid.recycleview.Adapter.ViewHolder.RecycleViewAdapterViewHolder;
-import com.example.dhadotid.recycleview.Model.DataModel;
+import com.example.dhadotid.recycleview.Model.EvaluasiModel;
 import com.example.dhadotid.recycleview.R;
 
 import java.util.ArrayList;
@@ -19,9 +19,9 @@ import java.util.ArrayList;
 public class RecycleViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     Context context;
-    ArrayList<DataModel> data;
+    ArrayList<EvaluasiModel> data;
 
-    public RecycleViewAdapter(Context context, ArrayList<DataModel> data) {
+    public RecycleViewAdapter(Context context, ArrayList<EvaluasiModel> data) {
         this.context = context;
         this.data = data;
     }
@@ -42,7 +42,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if(holder instanceof RecycleViewAdapterViewHolder){
-            DataModel dataModel = data.get(position);
+            EvaluasiModel dataModel = data.get(position);
 
             ((RecycleViewAdapterViewHolder) holder).setUI(dataModel);
         }
