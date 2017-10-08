@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="15dp">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tempat buat Soalnya"
+                android:textColor="@android:color/black"
+                android:id="@+id/evaluasi_activity_custom_tvsoal"
+                android:singleLine="false"
+                />
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/evaluasi_activity_custom_tvsoal"
+                android:id="@+id/evaluasi_activity_custom_rg">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jawaban A"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/evaluasi_activity_custom_tvsoal"
+                    android:textColor="@android:color/black"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/evaluasi_activity_custom_rbjawabana"
+                    />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jawaban B"
+                    android:textColor="@android:color/black"
+                    android:layout_below="@+id/evaluasi_activity_custom_rbjawabana"
+                    android:id="@+id/evaluasi_activity_custom_rbjawabanb"
+                    />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jawaban C"
+                    android:textColor="@android:color/black"
+                    android:layout_below="@+id/evaluasi_activity_custom_rbjawabanb"
+                    android:id="@+id/evaluasi_activity_custom_rbjawabanc"
+                    />
+                <!--<RadioButton-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Jawaban D"-->
+                <!--android:textColor="@android:color/black"-->
+                <!--android:layout_below="@+id/evaluasi_activity_custom_rbjawabanc"-->
+                <!--android:id="@+id/evaluasi_activity_custom_rbjawaband"-->
+                <!--/>-->
+            </RadioGroup>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>
