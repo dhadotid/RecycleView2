@@ -21,7 +21,11 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.dhadotid.recycleview.Adapter.RecycleViewAdapter;
+import com.example.dhadotid.recycleview.Adapter.listener.BodyListener;
+import com.example.dhadotid.recycleview.Adapter.listener.SubmitButtonListener;
 import com.example.dhadotid.recycleview.Model.EvaluasiModel;
+import com.example.dhadotid.recycleview.service.DataConnection;
+import com.example.dhadotid.recycleview.service.listener.DataListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -50,10 +54,45 @@ public class RecycleViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recycleview);
 
         ButterKnife.bind(this);
+
+        setAdapter();
+
+        DataConnection connection = new DataConnection(this);
+        connection.onRequestDataConnection(new DataListener() {
+            @Override
+            public void onDataSuccessLoaded(ArrayList<EvaluasiModel> data) {
+                RecycleViewActivity.this.data.addAll(data);
+
+                recycleViewAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onDataFailedLoaded() {
+
+            }
+
+            @Override
+            public void onError(String message) {
+
+            }
+        });
     }
 
     private void setAdapter(){
         recycleViewAdapter = new RecycleViewAdapter(this, data);
+        recycleViewAdapter.buttonListener(new SubmitButtonListener() {
+            @Override
+            public void onButtonClicked() {
+                Toast.makeText(RecycleViewActivity.this, "Yoi bro", Toast.LENGTH_SHORT).show();
+            }
+        });
+        recycleViewAdapter.itemListener(new BodyListener() {
+            @Override
+            public void onRadioButtonClicked(int idSoal, String jawaban) {
+                Toast.makeText(RecycleViewActivity.this, "" + jawaban, Toast.LENGTH_SHORT).show();
+            }
+        });
+
         rcv.setLayoutManager(new LinearLayoutManager(this));
         rcv.setItemAnimator(new DefaultItemAnimator());
         rcv.setAdapter(recycleViewAdapter);
